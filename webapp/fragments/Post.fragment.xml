@@ -1,0 +1,65 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.comp.smartform" xmlns:sf="sap.ui.comp.smartfield"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.f" xmlns:lf="sap.ui.layout.form"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="" showHeader="false">
+		<!--<f:DynamicPage id="dynamicPageId" class="sapUiSizeCompact" showFooter="true">-->
+		<!--<f:title>-->
+		<!--	<f:DynamicPageTitle>-->
+		<!--		<f:heading >-->
+		<!--			<Title text="Items"/>-->
+		<!--		</f:heading>-->
+		<!--	</f:DynamicPageTitle>-->
+		<!--</f:title>-->
+		<!--<f:header>-->
+		<!--	<f:DynamicPageHeader pinnable="false">-->
+		<!--<f:content>-->
+		<form:SmartForm editable="true" id="sf_Item">
+			<form:layout>
+				<form:ColumnLayout columnsM="2" columnsL="3" columnsXL="6"/>
+			</form:layout>
+			<form:Group >
+				<form:GroupElement>
+					<sf:SmartField mandatory="false" id="idfunctionalloc" value="{Tplnr}" textLabel="Functional Location" entitySet="StoppageDashboardSheetSet"
+						innerControlsCreated="onSetValueHelpOnly" change="onFunlocChange"/>
+				</form:GroupElement>
+				<form:GroupElement>
+					<sf:SmartField mandatory="false" id="idEquipemnt" value="{Equnr}" textLabel="Equipment" entitySet="StoppageDashboardSheetSet"
+						innerControlsCreated="onSetValueHelpOnly"/>
+				</form:GroupElement>
+				<form:GroupElement label="Main WorkCenter">
+					<Text text="{ItemModel>/Arbpl}" enabled="false"/>
+				</form:GroupElement>
+				<form:GroupElement>
+					<sf:SmartField mandatory="false" id="idreasponsearea" value="{RespArea}" textLabel="Responsible Area" entitySet="StoppageDashboardSheetSet"
+						innerControlsCreated="onSetValueHelpOnly"/>
+				</form:GroupElement>
+				<form:GroupElement>
+					<sf:SmartField mandatory="false" id="idreason" textLabel="Reason" entitySet="StoppageDashboardSheetSet" value="{Reason}"
+						innerControlsCreated="onSetValueHelpOnly"/>
+				</form:GroupElement>
+				<form:GroupElement>
+					<sf:SmartField mandatory="false" change="fnStoppage" id="idStoppage" value="{StoppageType}" textLabel="Stoppage Type"
+						entitySet="StoppageDashboardSheetSet" innerControlsCreated="onSetValueHelpOnly"/>
+				</form:GroupElement>
+				<form:GroupElement>
+					<sf:SmartField mandatory="false" id="idPriority" textLabel="Priority" value="{Priok}" entitySet="StoppageDashboardSheetSet"
+						innerControlsCreated="onSetValueHelpOnly"/>
+				</form:GroupElement>
+				<form:GroupElement label="Remark">
+					<TextArea id="idremark" rows="3" required="true" maxLength="100"/>
+					<!--<sf:SmartField textLabel="Remark" entitySet="StoppageDashboardSheetSet" id="idremark" value="{Message}" />-->
+					<!--<sf:SmartField mandatory="false" id="idremark" value="{Message}" textLabel="Remark" entitySet="StoppageDashboardSheetSet"-->
+					<!--	multiLineSettings="{cols: 50, rows: 4}"  innerControlsCreated="onSetValueHelpOnly" maxLength="100"/>-->
+				</form:GroupElement>
+			</form:Group>
+		</form:SmartForm>
+		<!--</f:content>-->
+		<!--	</f:DynamicPageHeader>-->
+		<!--</f:header>-->
+		<!--</f:DynamicPage>-->
+		<buttons>
+			<Button text="Post" type="Accept" press="fnPostItem"/>
+			<Button text="Cancel" type="Reject" press="fnCancelItem"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

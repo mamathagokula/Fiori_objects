@@ -1,0 +1,113 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZPM_BREAKDOWN_ORDER_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="StoppageSheet" sap:content-version="1">
+				<Key><PropertyRef Name="TagNo"/><PropertyRef Name="Material"/></Key><Property Name="TagNo" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Tag Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material Number"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AutoRecordTimeZone" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Auto Record Timezone"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Flag" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Run/Stop" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Date" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Time" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Time" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MessageType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Message Type"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="256" sap:unicode="false" sap:label="Message" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="InternetUser" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="Internet User"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="StoppageDashboardSheet" sap:content-version="1">
+				<Key><PropertyRef Name="Email"/><PropertyRef Name="Werks"/><PropertyRef Name="Arbpl"/><PropertyRef Name="CrDate"/><PropertyRef Name="Srno"/></Key><Property Name="Eqktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Equipment Description"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Email ID" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Priok" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Priority" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Tidnr" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Equipment Tech ID"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Messagetype" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Message Type"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Tplnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Functional Location"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Arbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Work Center" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="256" sap:unicode="false" sap:label="Message" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TagNo" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Tag Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="CrDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Start Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Srno" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Item" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Reason" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Reason" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ReasonText" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Reason Text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RunStartTime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Run Start Time" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RunEndTime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Run End Time" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StopStartTime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Stop Start Time" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StopEndTime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Stop End time" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RunDuration" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Run Duration"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StopDuration" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Stop Duration"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RespArea" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Responsible Area"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StoppageType" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Stoppage Type"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Empcode" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel Number"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NormalDutyHr" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="2" sap:unicode="false" sap:label="Normal Duty Hours"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OvertimeDutyHr" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="2" sap:unicode="false"
+					sap:label="Overtime Duty Hours" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HmrAfter" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="2" sap:unicode="false"
+					sap:label="Hour Meter Reading (After)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HmrBefore" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="2" sap:unicode="false"
+					sap:label="Hour Meter Reading (Before)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Dumper35tTrips" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false"
+					sap:label="No. of dumper trips (35T) loaded / transported" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Dumper50tTrips" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false"
+					sap:label="No. of dumper trips (50T) loaded / transported" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Ernam" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Created by" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Erdat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Created Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Erzet" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Created Time" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aenam" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Changed by" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aedat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Changed Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aezet" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Changed Time" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Checkbox" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Check Box" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NoStoppageFlag" Type="Edm.String" Nullable="false" MaxLength="11" sap:unicode="false" sap:label="No Stoppage Flag"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Equnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Equipment Number"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Qmnum" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Notification Number"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aufnr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Order Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="StoppageTypeVH" sap:content-version="1">
+				<Key><PropertyRef Name="StoppageType"/></Key><Property Name="StoppageType" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Stoppage Type"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/></EntityType>
+			<EntityType Name="ResponsibleAreaVH" sap:content-version="1">
+				<Key><PropertyRef Name="Werks"/><PropertyRef Name="RespArea"/></Key><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="RespArea" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Responsible Area"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/></EntityType>
+			<EntityType Name="ReasonVH" sap:content-version="1">
+				<Key><PropertyRef Name="Werks"/><PropertyRef Name="Reason"/></Key><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Reason" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="REASON" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="ReasonText" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="DESCRIPTION"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/></EntityType>
+			<EntityType Name="Priority" sap:content-version="1">
+				<Key><PropertyRef Name="Priok"/></Key><Property Name="Priok" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Priority" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Priokx" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Priority Name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/></EntityType>
+			<EntityType Name="PlantVH" sap:content-version="1">
+				<Key><PropertyRef Name="Werks"/></Key><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/></EntityType>
+			<EntityType Name="EquipmentVH" sap:content-version="1">
+				<Key><PropertyRef Name="Equnr"/></Key><Property Name="Equnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Equipment" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Tplnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Functional Location"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Eqktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Equipment Description"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Arbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Work center" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Swerk" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/></EntityType>
+			<EntityType Name="WorkCenterVH" sap:content-version="1">
+				<Key><PropertyRef Name="Arbpl"/></Key><Property Name="Objid" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Object ID" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Arbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Work center" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Ktext" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Work Center Description"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Plant Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/></EntityType>
+			<EntityType Name="TagNumberVH" sap:content-version="1">
+				<Key><PropertyRef Name="TagNo"/></Key><Property Name="Equnr" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Equipment Number"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="TagNo" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Tag Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/></EntityType>
+			<EntityContainer Name="ZPM_BREAKDOWN_ORDER_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="StoppageSheetSet" EntityType="ZPM_BREAKDOWN_ORDER_SRV.StoppageSheet" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="StoppageDashboardSheetSet" EntityType="ZPM_BREAKDOWN_ORDER_SRV.StoppageDashboardSheet" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="StoppageTypeVHSet" EntityType="ZPM_BREAKDOWN_ORDER_SRV.StoppageTypeVH" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ResponsibleAreaVHSet" EntityType="ZPM_BREAKDOWN_ORDER_SRV.ResponsibleAreaVH" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ReasonVHSet" EntityType="ZPM_BREAKDOWN_ORDER_SRV.ReasonVH" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="PrioritySet" EntityType="ZPM_BREAKDOWN_ORDER_SRV.Priority" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="PlantVHSet" EntityType="ZPM_BREAKDOWN_ORDER_SRV.PlantVH" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="EquipmentVHSet" EntityType="ZPM_BREAKDOWN_ORDER_SRV.EquipmentVH" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="WorkCenterVHSet" EntityType="ZPM_BREAKDOWN_ORDER_SRV.WorkCenterVH" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="TagNumberVHSet" EntityType="ZPM_BREAKDOWN_ORDER_SRV.TagNumberVH" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/></EntityContainer><Annotation xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZPM_BREAKDOWN_ORDER_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZPM_BREAKDOWN_ORDER_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

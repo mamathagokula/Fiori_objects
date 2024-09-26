@@ -1,0 +1,67 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.ui.dalmia.stoppage.zstoppageDashboard.controller.stoppageDashoard" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page title="Page1" showHeader="false">
+		<content>
+			<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="StoppageDashboardSheetSet" persistencyKey="SmartFilter_Explored"
+				considerAnalyticalParameters="true" search="onGoPress">
+				<smartFilterBar:controlConfiguration>
+					<smartFilterBar:ControlConfiguration key="Phase" id="PhaseId" label="Run/Stop/Closed" visibleInAdvancedArea="true">
+						<smartFilterBar:customControl>
+							<Select id="customSelect">
+								<core:Item key="1" text="Stop"/>
+								<core:Item key="2" text="Run"/>
+								<core:Item key="3" text="Closed"/>
+							</Select>
+						</smartFilterBar:customControl>
+					</smartFilterBar:ControlConfiguration>
+				</smartFilterBar:controlConfiguration>
+			</smartFilterBar:SmartFilterBar>
+			<smartTable:SmartTable entitySet="StoppageDashboardSheetSet" demandPopin="true" enableAutoColumnWidth="true" smartFilterId="smartFilterBar"
+				useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" tableType="ResponsiveTable" useTablePersonalisation="true"
+				header="Items" showRowCount="true" class="sapUiResponsiveContentPadding" beforeRebindTable="onBeforeRebindTable">
+				<smartTable:customToolbar>
+					<OverflowToolbar design="Transparent">
+						<ToolbarSpacer/>
+						<Button text="Edit" icon="sap-icon://edit" press="handle_EditPress"/>
+					</OverflowToolbar>
+				</smartTable:customToolbar>
+				<Table id="tableID" mode="SingleSelectLeft" growing="true" selectionChange="onSelectionChange">
+					<columns>
+						<Column width="9rem">
+							<customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "Majorequnr","leadingProperty": "Majorequnr", "sortProperty": "Majorequnr", "filterProperty": "Majorequnr", "columnIndex": "0"}'/>
+							</customData>
+							<Text text="Major Equipment"/>
+						</Column>
+						<Column width="7rem">
+							<customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "Matnr","leadingProperty": "Matnr", "sortProperty": "Matnr", "filterProperty": "Matnr", "columnIndex": "3"}'/>
+							</customData>
+							<Text text="Material"/>
+						</Column>
+						<Column width="7rem">
+							<customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "CrDate","leadingProperty": "CrDate", "sortProperty": "CrDate", "filterProperty": "CrDate", "columnIndex": "4"}'/>
+							</customData>
+							<Text text="Start Date"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="None" press="onColumnListItemPress">
+							<cells>
+								<ObjectIdentifier title="{Equnr}"/>
+								<Text text="{Matnr}"/>
+								<Text text="{path: 'CrDate', type:'sap.ui.model.type.Date'}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</smartTable:SmartTable>
+		</content>
+	</Page>
+</mvc:View>

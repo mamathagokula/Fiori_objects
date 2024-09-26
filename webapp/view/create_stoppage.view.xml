@@ -1,0 +1,55 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.ui.dalmia.stoppage.zstoppageDashboard.controller.create_stoppage" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:form="sap.ui.comp.smartform" xmlns:sf="sap.ui.comp.smartfield" xmlns:l="sap.ui.layout" xmlns:f="sap.f" xmlns:lf="sap.ui.layout.form">
+	<f:DynamicPage id="dynamicPageId" class="sapUiSizeCompact" showFooter="true">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading >
+					<Title text="Items"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader pinnable="false">
+				<f:content>
+					<form:SmartForm editable="true" id="sf_PRCreateItem">
+						<form:layout>
+							<form:ColumnLayout columnsM="2" columnsL="3" columnsXL="6"/>
+						</form:layout>
+						<form:Group >
+							<form:GroupElement label="Functional Location">
+								<Text text="{ItemModel>/Tplnr}" enabled="false"/>
+							</form:GroupElement>
+							<form:GroupElement label="WorkCenter">
+								<Text text="{ItemModel>/Arbpl}" enabled="false"/>
+							</form:GroupElement>
+							<form:GroupElement>
+								<sf:SmartField mandatory="false" id="idStoppage" value="{StoppageType}" textLabel="Stoppage Type" entitySet="StoppageDashboardSheetSet"/>
+							</form:GroupElement>
+							<form:GroupElement>
+								<sf:SmartField mandatory="false" id="idreasponsearea" value="{RespArea}" textLabel="Responsible Area" entitySet="StoppageDashboardSheetSet"/>
+							</form:GroupElement>
+							<form:GroupElement>
+								<sf:SmartField mandatory="false" id="idreason" textLabel="Reason" entitySet="StoppageDashboardSheetSet" value="{Reason}"/>
+							</form:GroupElement>
+							<form:GroupElement>
+								<sf:SmartField mandatory="false" id="idremark" value="{Message}" textLabel="Remark" entitySet="StoppageDashboardSheetSet"
+									multiLineSettings="{cols: 50, rows: 4}"/>
+							</form:GroupElement>
+							<form:GroupElement>
+								<sf:SmartField mandatory="false" id="idPriority" textLabel="Priority" value="{Priok}" entitySet="StoppageDashboardSheetSet"/>
+							</form:GroupElement>
+						</form:Group>
+					</form:SmartForm>
+				</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Post" press="fnPostItem" type="Emphasized"/>
+				<!--<Button text="Cancel" press="fnCancelpress" type="Reject"/>-->
+			</OverflowToolbar>
+		</f:footer>
+	</f:DynamicPage>
+</mvc:View>
